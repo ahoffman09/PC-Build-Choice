@@ -1,0 +1,207 @@
+** html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PC Building Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!--body-->
+  <body>
+    <fieldset id="title-border">
+      <h1 id="title">Your PC Building Experience</h1>
+    </fieldset>
+    <fieldset id="desc-border">
+      <p id="description"><em>A brief insight on your experiences :)</em></p>
+    </fieldset>
+    <!--start of form-->
+    <form id="survey-form" method="post">
+      <!--3 text options-->
+      <fieldset class="outer">
+        <legend>Some Basic Info</legend>
+        <fieldset class="inner">
+          <label for="name" id="name-label">Your Name <div><input id="name" type="text" name="name" placeholder="Name*" required></div></label>
+        </fieldset>
+        <fieldset class="inner">
+          <label for="email" id="email-label">Your Email <div><input id="email" type="email" name="email" placeholder="Email*" required></div></label>
+        </fieldset>
+        <fieldset class="inner" name="age">
+          <label for="number" id="number-label">How old are you? <div><input id="number" type="number" name="number" placeholder="Age" min="12" max="116"></div></label>
+        </fieldset>
+      </fieldset>
+      <!--textarea-->
+      <fieldset class="outer">
+        <legend>What made you decide to build a PC?</legend>
+        <div><textarea id="textarea" name="textarea" rows="3" cols="30" placeholder="I..." required></textarea></div>
+      </fieldset>
+      <!--dropdown select-->
+      <fieldset class="outer">
+        <legend>What brand do you like most?</legend>
+          <label for="dropdown">Pick one
+            <div>
+              <select id="dropdown" name="dropdown" required>
+                <option value="">Select One</option>
+                <option value="1">Nvidia</option>
+                <option value="2">EVGA</option>
+                <option value="3">Asus</option>
+                <option value="4">MSI</option>
+                <option value="5">NZXT</option>
+                <option value="6">Logitech</option>
+                <option value="7">AMD Ryzen</option>
+                <option value="8">SteelSeries</option>
+                <option value="9">Acer</option>
+                <option value="10">ASRock</option>
+                <option value="11">Gigabyte</option>
+                <option value="12">Intel</option>
+                <option value="13">Corsair</option>
+                <option value="14">Lian Li</option>
+                <option value="15">Razer</option>
+                <option value="16">Other</option>
+              </select>
+            </div>
+          </label>
+      </fieldset>
+      <!--radio buttons-->
+      <fieldset class="outer">
+        <legend>How much did building it cost?</legend>
+        <label for="radio-button1"><input id="radio-button1" type="radio" name="radio-buttons" value="radio-button1" class="inline"> <$2000</label>
+        <label for="radio-button2"><input id="radio-button2" type="radio" name="radio-buttons" value="radio-button2" class="inline"> $2000-$3000</label>
+        <label for="radio-button3"><input id="radio-button3" type="radio" name="radio-buttons" value="radio-button3" class="inline"> $3000-$4000</label>
+        <label for="radio-button4"><input id="radio-button4" type="radio" name="radio-buttons" value="radio-button4" class="inline"> $4000-$6000</label>
+        <label for="radio-button5"><input id="radio-button5" type="radio" name="radio-buttons" value="radio-button5" class="inline"> >$6000</label>
+      </fieldset>
+      <!--checkbox buttons-->
+      <fieldset class="outer">
+        <legend>What part or parts were your favorite?</legend>
+        <label for="checkbox-button1"><input id="checkbox-button1" type="checkbox" name="checkbox-buttons" value="checkbox1" class="inline"> Researching</label>
+        <label for="checkbox-button2"><input id="checkbox-button2" type="checkbox" name="checkbox-buttons" value="checkbox2" class="inline"> Set-up</label>
+        <label for="checkbox-button3"><input id="checkbox-button3" type="checkbox" name="checkbox-buttons" value="checkbox3" class="inline"> Installations</label>
+        <label for="checkbox-button4"><input id="checkbox-button4" type="checkbox" name="checkbox-buttons" value="checkbox4" class="inline"> Connecting everything</label>
+        <label for="checkbox-button5"><input id="checkbox-button5" type="checkbox" name="checkbox-buttons" value="checkbox5" class="inline"> The monitor/keyboard</label>
+        <label for="checkbox-button6"><input id="checkbox-button6" type="checkbox" name="checkbox-buttons" value="checkbox6" class="inline"> Other: <textarea id="other-input" name="other-input" rows="1" cols="30" placeholder="Please specify..."></textarea></label>
+      </fieldset>
+      <!--submit button-->
+      <input type="submit" value="Submit" id="submit">
+  </body>
+</html>
+
+** end of html **
+
+** start of css **
+
+h1, p {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 12%;
+  margin-bottom: 15px
+}
+
+label {
+  display: block;
+  margin: 0.5rem 1.5rem;
+  text-align: left
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #111111;
+  color: #c9c9c9;
+  font-family: Courier;
+  font-size: 20px;
+}
+
+form {
+  width: 70vw;
+  max-width: 700px;
+  min-width: 400px;
+  margin: 20px auto;
+  padding-bottom: 2em;
+}
+
+
+textarea {
+  margin: 10px;
+  width: 50%;
+  min-height: 1em;
+}
+
+div { 
+  text-align: right;
+}
+
+input,
+select {
+  margin: 10px 0;
+  width: 50%;
+  min-height: 1em;
+  font-family: Courier;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+.outer {
+  border: none;
+  border-top: 3px solid #04d9ff;
+  border-bottom: 3px solid #9500ff;
+  margin-top: 20px
+}
+
+.inner {
+  border: none;
+  border-bottom: 2px solid white
+}
+
+fieldset[name="age"] {
+  border-bottom: none;
+}
+
+
+fieldset[id="desc-border"]{
+  border: 0;
+  border-bottom: 3px solid #9500ff;
+  width: 70vw;
+  padding:0;
+  max-width: 500px;
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+fieldset[id="title-border"]{
+  border: 0;
+  border-bottom: 3px solid #04d9ff;
+  width: 70vw;
+  max-width: 700px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+textarea[name="other-input"]{
+  margin: 0;
+  margin-bottom: -5px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1rem;
+  background-color: #111111;
+  border-color: #04d9ff;
+  min-width: 300px;
+  color: #9500ff;
+}
+
+** end of css **
+
